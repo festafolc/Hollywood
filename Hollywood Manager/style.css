@@ -3,7 +3,11 @@
     padding: 0;
 }
 
-#people-section-title {
+body {
+    background-color: #cecece;
+}
+
+.section-title {
     text-align: center;
     margin-top: 80px;
 }
@@ -26,7 +30,7 @@
     box-shadow: 5px 5 px 10px #9E9E9E;
 }
 
-#hr-people-section {
+.hr-section {
     margin-top: 70px;
 }
 /*
@@ -36,11 +40,6 @@
     margin-right: auto;
     width: 75%;
 }*/
-
-#studios-section-title {
-    text-align: center;
-    margin-bottom: 50px;
-}
 
 .card-img-top{
     height: 200px;
@@ -63,3 +62,17 @@
     color: #e74c3c;
     transform: translateZ(3px) scale(1.1);
 }
+
+.map-container-5{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+    }
+    .map-container-5 iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+    }
