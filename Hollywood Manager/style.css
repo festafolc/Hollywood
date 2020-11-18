@@ -33,13 +33,6 @@ body {
 .hr-section {
     margin-top: 70px;
 }
-/*
-#movies{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 75%;
-}*/
 
 .card-img-top{
     height: 200px;
@@ -69,10 +62,38 @@ body {
     position:relative;
     height:0;
     }
-    .map-container-5 iframe{
-    left:0;
-    top:0;
-    height:100%;
-    width:100%;
-    position:absolute;
+
+.map-container-5 iframe{
+left:0;
+top:0;
+height:100%;
+width:100%;
+position:absolute;
+}
+
+.map-container-6{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
     }
+
+.map-container-6 iframe{
+left:0;
+top:0;
+height:100%;
+width:100%;
+position:absolute;
+}
+
+footer {
+    background-color: #9E9E9E;
+}
+footer a{
+    color: #383636ad;
+}
+
+footer a:hover{
+    color: #cecece;
+    text-decoration: none;
+}
