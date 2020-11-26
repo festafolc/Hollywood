@@ -35,7 +35,10 @@
             <a href="#" class="nav-link">Cinemas</a>
           </li>
           <li class="nav-item">
-            <a id="" href="#" class="nav-link">Sign up or Log in</a>
+            <a href="#" class="nav-link" data-toggle="modal" data-target="#makeLogin">Log in</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link" data-toggle="modal" data-target="#makeSignUp">Sign Up</a>
           </li>
         </ul>
         <form class="form-inline">
@@ -44,6 +47,36 @@
         </form>
       </div>
     </nav>
+    <div class="modal fade" role="dialog" id="makeLogin">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <form class="form" id="form">
+              <h3 class="font-weight-bold">Login!</h3>
+              <input type="text" id="admin" class="form-control" placeholder="username" required>
+              <input type="password" id="password" class="form-control" placeholder="password" required>
+              <button onclick=login() type="submit" class="btn btn-success">Login</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" role="dialog" id="makeSignUp">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <form class="form" id="form">
+              <h3 class="font-weight-bold">Register!</h3>
+              <input type="text" id="username" class="form-control" placeholder="username" required>
+              <input type="password" id="password" class="form-control" placeholder="password" required>
+              <button onclick=register() type="submit" class="btn btn-success">Register</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div id="welcome-page">
       <img id="img-header" class="img-fluid" src="images/hollywood-header.jpg" alt="Hollywood Picture">
     </div>
@@ -388,5 +421,5 @@
 <!--
   Back office -> admin.html
   As listas de cada section -> criar favoritos
-  Registo, login, editar o utilizador 
+  Registo usuario, login, editar o utilizador 
 -->
