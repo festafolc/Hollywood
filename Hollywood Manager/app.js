@@ -21,8 +21,6 @@ function login(){
     const password = document.getElementById("password").value;
     if(username=="admin" && password=="admin"){
         location.href="admin.html";
-    } else if (this.username && this.password){
-        location.href="index.html";
     } else {
         alert("Incorrect username or password");
     }
