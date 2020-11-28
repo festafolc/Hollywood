@@ -17,16 +17,21 @@ body{
 }
 
 #people img{
-    margin-top: -50px;
+    margin-top: -70px;
 }
 
 #people .card{
     border-radius: 0;
     box-shadow: 5px 5px 15px #e74c3c;
     transition: all 0.3s ease-in;
+    max-height: 300px;
 }
 
-#people .card:hover{
+#people .card .card-body{
+    height: 200px;
+}
+
+#people .card .card-body:hover{
     background: #e74c3c;
     color: #fff;
     border-radius: 5px;
@@ -38,12 +43,9 @@ body{
     margin-top: 70px;
 }
 
-#people .card .col{
-    height: 400px;
-}
 .card svg{
     position: relative;
-    margin-left: 220px;
+
 }
 
 #people .card img{
