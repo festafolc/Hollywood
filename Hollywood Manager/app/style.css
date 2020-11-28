@@ -17,7 +17,7 @@ body{
 }
 
 #people img{
-    margin-top: -70px;
+    margin-top: -40px;
 }
 
 #people .card{
@@ -39,13 +39,13 @@ body{
     box-shadow: 5px 5 px 10px #9E9E9E;
 }
 
-.hr-section{
-    margin-top: 70px;
+.favouritePeople {
+    background-color: Transparent;
+    border: none;
 }
 
-.card svg{
-    position: relative;
-
+.hr-section{
+    margin-top: 70px;
 }
 
 #people .card img{
