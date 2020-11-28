@@ -3,22 +3,17 @@ let app = new function() {
     this.users = [];
   
     this.create = function () {
-        function User (name, email){
-            this.name = name;
-            this.email = email;
-        }
-
         let userName = document.getElementById('setUser').value;
         let userEmail = document.getElementById('setEmail').value;
-        // let user = userName.value;
-        // let email = userEmail.value;
-
-        newUser = new User(userName, userEmail);
   
         if (userName && userEmail) {
-            this.users.push(newUser);
-            userName.value = '';
-            userEmail.value = '';
+            let user = {
+              name : userName,
+              email : userEmail
+            }
+            this.users.push(JSON.parse(JSON.stringify(user)));
+            document.getElementById('setUser').value = null;
+            document.getElementById('setEmail').value = null;
             this.read();
         }
     };
@@ -32,8 +27,8 @@ let app = new function() {
           data += '<th>Email</th>';
           data += '</tr>';
           data += '<tr>';
-          data += '<td>' + (i+1) + ". " + this.name + ' ' +'</td>';
-          data += '<td>' + ' ' + this.email + '</td>';
+          data += '<td>' + (i+1) + ". " + this.users[i].name + ' ' +'</td>';
+          data += '<td>' + ' ' + this.users[i].email + '</td>';
           data += '<td><button onclick="app.update(' + i + ' ' + ')"  class="btn btn-warning">Update</button></td>';
           data += '<td><button onclick="app.delete(' + i + ' ' + ')"  class="btn btn-danger">Delete</button></td>';
           data += '</tr>';
@@ -50,20 +45,31 @@ let app = new function() {
     };
   
     this.update = function (item) {
-      let element = document.getElementById('updateUser');
-      element.value = this.users[item];
+      let updateName = document.getElementById('updateName');
+      let updateEmail = document.getElementById('updateEmail');
+      let updateUserIndex = document.getElementById('updateUserIndex');
+      updateName.value = this.users[item].name;
+      updateEmail.value = this.users[item].email;
+      updateUserIndex.value = item;
       document.getElementById('usersBox').style.display = 'block';
-      self = this;
-      document.getElementById('saveUpdate').onsubmit = function() {
-        let user = element.value;
-        if (user) {
-          self.users.splice(item, 1, user.trim());
-          self.read();
-          CloseInput();
-        }
-      }
     };
-  
+
+    this.save = function (){
+      let updateName = document.getElementById('updateName');
+      let updateEmail = document.getElementById('updateEmail');
+      let updateUserIndex = document.getElementById('updateUserIndex');
+      let user = {
+        name : updateName.value,
+        email : updateEmail.value
+      }
+      self = this;
+      if (user) {
+        self.users[updateUserIndex.value] = user;
+        self.read();
+        CloseInput();
+      }
+    }
+ 
     this.delete = function (item) {
       this.users.splice(item, 1);
       this.read();

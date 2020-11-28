@@ -9,25 +9,25 @@
 </head>
 <body>
     <div class="container text-center mt-5">
-        <h1>Administration Area</h1>
+        <h1>Administrative Area</h1>
         <div class="form">
             <form action="javascript:void(0);" method="POST" onsubmit="app.create()">
             <input type="text" id="setUser" placeholder="Insert new user">
-            <input type="email" id="setEmail" placeholder="Insert new user">
+            <input type="email" id="setEmail" placeholder="Insert new email">
             <input type="submit" value="Create" class="btn btn-primary">
             </form>
             <br>
             <p id="counter"></p>
-        
             <table id="table">
                 <tbody id="usersTable">
                 </tbody>
             </table>
         </div>
-        
         <div id="usersBox" role="aria-hidden">
-            <form action="javascript:void(0);" method="POST" id="save-edit">
-              <input type="text" id="edit-todo">
+            <form action="javascript:void(0);" onsubmit="app.save()" method="POST" id="saveUpdate">
+              <input type="text" id="updateName">
+              <input type="text" id="updateEmail">
+              <input type="hidden" id="updateUserIndex">
               <input type="submit" value="Save" class="btn btn-success"/> <a onclick="CloseInput()" aria-label="Close">&#10006;</a>
             </form>
           </div>
