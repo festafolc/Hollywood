@@ -15,13 +15,16 @@ function add(){
     dataBase.push(newUser);
     console.log(dataBase);
 }
-
+console.log("hola");
 function login(){
-    const username = document.getElementById("admin").value;
-    const password = document.getElementById("password").value;
-    if(username=="admin" && password=="admin"){
-        location.href="/admin/admin.html";
-    } else {
-        alert("Incorrect username or password");
-    }
+    console.log("testando");
+    // username = document.getElementById("admin").value;
+    // password = document.getElementById("password").value;
+    // console.log(username);
+    // console.log(password);
+    // if(username=="admin" && password=="admin"){
+    //     window.location.href="/admin/admin.html";
+    // } else {
+    //     alert("Incorrect username or password");
+    // }
 }
