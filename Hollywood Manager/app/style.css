@@ -44,6 +44,10 @@ body{
     border: none;
 }
 
+#pFavourites {
+    margin-top: 40px;
+}
+
 .hr-section{
     margin-top: 70px;
 }
