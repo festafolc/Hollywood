@@ -1,6 +1,8 @@
 let app = new function() {
     this.element = document.getElementById('pFavourites');
+    this.elementCinemas = document.getElementById('pFavouritesCinemas');
     this.favouritePeople = [];
+    this.favouriteCinemas = [];
 
     this.starPeople = function(event) {
         let btn = event.getAttribute("data-key");
@@ -25,6 +27,31 @@ let app = new function() {
             data = '';
         }
         return this.element.innerHTML = data.slice(0, -2); 
+    };
+
+    this.starCinemas = function(ev) {
+        let btnCinema = ev.getAttribute("data-key");
+        let favCinemas = this.favouriteCinemas.findIndex(item => item == btnCinema);
+        if(favCinemas === -1){
+            this.favouriteCinemas.push(btnCinema);
+            ev.children[0].style = 'color: #FFDF00;';
+        } else {
+            this.favouriteCinemas.splice(favCinemas, 1);
+            ev.children[0].style = '';
+        }
+        this.showFavouritesCinemas();
+    };
+
+    this.showFavouritesCinemas = function (){
+        let dataCinemas = '<h4>Your favourites cinemas are </h4>';
+        if (this.favouriteCinemas.length > 0){
+            for (i = 0; i < this.favouriteCinemas.length; i++){
+                dataCinemas += this.favouriteCinemas[i] + ', ';
+            }
+        } else {
+            dataCinemas = '';
+        }
+        return this.elementCinemas.innerHTML = dataCinemas.slice(0, -2); 
     };
 };
 
@@ -52,8 +79,6 @@ let regLog = new function() {
     
         alert("User has been register");
     }
-
-
 
     this.login = function(){
         let userLogin = document.getElementById('admin').value;
@@ -95,13 +120,12 @@ let regLog = new function() {
     }
 }
 
-function load (){
-    document.getElementById('people').style.display = 'none';
-    document.getElementById('movies').style.display = 'none';
-    document.getElementById('studios').style.display = 'none';
-    document.getElementById('cinemas').style.display = 'none';
-    document.getElementById('openEditProfile').style.display = 'none';
-}
+// function load (){
+//     document.getElementById('people').style.display = 'none';
+//     document.getElementById('movies').style.display = 'none';
+//     document.getElementById('studios').style.display = 'none';
+//     document.getElementById('cinemas').style.display = 'none';
+//     document.getElementById('openEditProfile').style.display = 'none';
+// }
 
-window.onload = load;
-
+// window.onload = load;

@@ -39,12 +39,16 @@ body{
     box-shadow: 5px 5 px 10px #9E9E9E;
 }
 
-.favouritePeople {
-    background-color: Transparent;
+.favourites {
+    background-color: transparent;
     border: none;
 }
 
 #pFavourites {
+    margin-top: 40px;
+}
+
+#pFavouritesCinemas{
     margin-top: 40px;
 }
 
@@ -87,11 +91,11 @@ body{
     }
 
 .map-container-5 iframe{
-left:0;
-top:0;
-height:100%;
-width:100%;
-position:absolute;
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
 }
 
 .map-container-6{
@@ -107,6 +111,36 @@ top:0;
 height:100%;
 width:100%;
 position:absolute;
+}
+
+
+#cinemas .card .card-body{
+    max-height: 300px;
+    overflow: auto;
+    transition: all 0.3s ease-in;
+}
+
+#cinemas .card .card-body:hover{
+    background: #e74c3c;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 5px 5 px 10px #9E9E9E;
+}
+
+#map-container-google{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+#hollywoodMap{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+    border: none;   
 }
 
 footer {
