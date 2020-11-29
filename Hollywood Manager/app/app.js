@@ -1,22 +1,25 @@
+//Manage favourites lists
 let app = new function() {
     this.element = document.getElementById('pFavourites');
     this.elementCinemas = document.getElementById('pFavouritesCinemas');
     this.favouritePeople = [];
     this.favouriteCinemas = [];
 
+    //Favourite People
     this.starPeople = function(event) {
         let btn = event.getAttribute("data-key");
         let fav = this.favouritePeople.findIndex(item => item == btn);
         if(fav === -1){
             this.favouritePeople.push(btn);
-            event.children[0].style = 'color: #FFDF00;';
+            event.children[0].style = 'color: #FFDF00;'; //Star button is gold
         } else {
             this.favouritePeople.splice(fav, 1);
-            event.children[0].style = '';
+            event.children[0].style = ''; //Star button back to original color
         }
         this.showFavourites();
     };
 
+    //Display favourite people list on the html document
     this.showFavourites = function (){
         let data = '<h4>Your favourites are </h4>';
         if (this.favouritePeople.length > 0){
@@ -29,19 +32,21 @@ let app = new function() {
         return this.element.innerHTML = data.slice(0, -2); 
     };
 
+    //Favourite cinemas
     this.starCinemas = function(ev) {
         let btnCinema = ev.getAttribute("data-key");
         let favCinemas = this.favouriteCinemas.findIndex(item => item == btnCinema);
         if(favCinemas === -1){
             this.favouriteCinemas.push(btnCinema);
-            ev.children[0].style = 'color: #FFDF00;';
+            ev.children[0].style = 'color: #FFDF00;'; //Star button is gold
         } else {
             this.favouriteCinemas.splice(favCinemas, 1);
-            ev.children[0].style = '';
+            ev.children[0].style = ''; //Star button back to original color
         }
         this.showFavouritesCinemas();
     };
 
+    //Display favourite cinemas list on the html document
     this.showFavouritesCinemas = function (){
         let dataCinemas = '<h4>Your favourites cinemas are </h4>';
         if (this.favouriteCinemas.length > 0){
@@ -55,9 +60,8 @@ let app = new function() {
     };
 };
 
-
+//Register user and login
 let regLog = new function() {
-    // this.edition = document.getElementById('headerFather');
     this.registerUser = [];
 
     this.register = function(){
@@ -101,6 +105,7 @@ let regLog = new function() {
         }
     }
 
+    //Edit user profile
     this.editUser = function(){
         console.log(userName);
         console.log(userEmail);
@@ -109,6 +114,7 @@ let regLog = new function() {
         let newUserEmailEdition = document.getElementById('uEe').value;
         let newPasswordEdtion = document.getElementById('uEp').value;
         
+        //Update new values for the user
         registerNewUser.name = newUsernameEdition;
         registerNewUser.email = newUserEmailEdition;
         registerNewUser.password = newPasswordEdtion;
@@ -120,6 +126,7 @@ let regLog = new function() {
     }
 }
 
+//Sections are display 'none' when open app
 function load (){
     document.getElementById('people').style.display = 'none';
     document.getElementById('movies').style.display = 'none';
