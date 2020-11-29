@@ -124,6 +124,11 @@ let regLog = new function() {
         console.log(registerNewUser.email);
         console.log(registerNewUser.password);
 
+        alert("Changes has been saved successfully");
+        document.getElementById('uEn').value = null;
+        document.getElementById('uEe').value = null;
+        document.getElementById('uEp').value = null;
+
     }
 }
 

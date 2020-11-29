@@ -12,7 +12,7 @@ let app = new function() {
               name : userName,
               email : userEmail
             }
-            this.users.push(JSON.parse(JSON.stringify(user)));
+            this.users.push(JSON.parse(JSON.stringify(user))); //Push JSON objecto into the list
             document.getElementById('setUser').value = null;
             document.getElementById('setEmail').value = null;
             this.read();
@@ -80,7 +80,7 @@ let app = new function() {
       this.read();
     };
   
-    //Count number of users and display
+    //Display number of users
     this.count = function(data) {
       let element = document.getElementById('counter');
       let name = 'Users';
