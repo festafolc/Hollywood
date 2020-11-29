@@ -87,10 +87,8 @@ let regLog = new function() {
     this.login = function(){
         let userLogin = document.getElementById('admin').value;
         let passwordLogin = document.getElementById('password').value;
-        const usernameAdmin = document.getElementById("admin").value;
-        const passwordAdmin = document.getElementById("password").value;
 
-        if(usernameAdmin=="admin" && passwordAdmin=="admin"){
+        if(userLogin=="admin" && passwordLogin=="admin"){
             window.open("../admin/admin.html");
         }else if (userLogin==registerNewUser.name && passwordLogin==registerNewUser.password) {
             alert("Usuario logado com sucesso!");
@@ -103,6 +101,9 @@ let regLog = new function() {
         else {
             alert("Incorrect username or password");
         }
+
+        document.getElementById('admin').value = null;
+        document.getElementById('password').value = null;
     }
 
     //Edit user profile
