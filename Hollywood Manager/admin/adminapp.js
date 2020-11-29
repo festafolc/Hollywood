@@ -104,4 +104,3 @@ app.read();
 function CloseInput() {
 document.getElementById('usersBox').style.display = 'none';
 }
-  

@@ -29,26 +29,79 @@ let app = new function() {
 };
 
 
-function register(){
-    let registerUser = [];
+let regLog = new function() {
+    // this.edition = document.getElementById('headerFather');
+    this.registerUser = [];
 
-    let userName = document.getElementById('username').value;
-    let userEmail = document.getElementById('email').value;
-    let userPassword = document.getElementById('password').value;
-
-    let registerNewUser = {
-        name : userName,
-        email : userEmail,
-        password : userPassword
-      }
+    this.register = function(){
+        userName = document.getElementById('usernameReg').value;
+        userEmail = document.getElementById('emailReg').value;
+        userPassword = document.getElementById('passwordReg').value;
     
-    registerUser.push(JSON.parse(JSON.stringify(registerNewUser)));
+        registerNewUser = {
+            name : userName,
+            email : userEmail,
+            password : userPassword
+          }
+        
+        this.registerUser.push(JSON.parse(JSON.stringify(registerNewUser)));
+    
+        document.getElementById('usernameReg').value = null;
+        document.getElementById('emailReg').value = null;
+        document.getElementById('passwordReg').value = null;
+    
+        alert("User has been register");
+    }
 
-    document.getElementById('username').value = null;
-    document.getElementById('email').value = null;
-    document.getElementById('password').value = '';
 
-    alert("User has been register");
 
-    console.log(registerUser);
+    this.login = function(){
+        let userLogin = document.getElementById('admin').value;
+        let passwordLogin = document.getElementById('password').value;
+        const usernameAdmin = document.getElementById("admin").value;
+        const passwordAdmin = document.getElementById("password").value;
+
+        if(usernameAdmin=="admin" && passwordAdmin=="admin"){
+            window.open("../admin/admin.html");
+        }else if (userLogin==registerNewUser.name && passwordLogin==registerNewUser.password) {
+            alert("Usuario logado com sucesso!");
+            document.getElementById('people').style.display = 'block';
+            document.getElementById('movies').style.display = 'block';
+            document.getElementById('studios').style.display = 'block';
+            document.getElementById('cinemas').style.display = 'block';
+            document.getElementById('openEditProfile').style.display = 'inline-block';
+        } 
+        else {
+            alert("Incorrect username or password");
+        }
+    }
+
+    this.editUser = function(){
+        console.log(userName);
+        console.log(userEmail);
+        console.log(userPassword);
+        let newUsernameEdition = document.getElementById('uEn').value;
+        let newUserEmailEdition = document.getElementById('uEe').value;
+        let newPasswordEdtion = document.getElementById('uEp').value;
+        
+        registerNewUser.name = newUsernameEdition;
+        registerNewUser.email = newUserEmailEdition;
+        registerNewUser.password = newPasswordEdtion;
+
+        console.log(registerNewUser.name);
+        console.log(registerNewUser.email);
+        console.log(registerNewUser.password);
+
+    }
 }
+
+function load (){
+    document.getElementById('people').style.display = 'none';
+    document.getElementById('movies').style.display = 'none';
+    document.getElementById('studios').style.display = 'none';
+    document.getElementById('cinemas').style.display = 'none';
+    document.getElementById('openEditProfile').style.display = 'none';
+}
+
+window.onload = load;
+
