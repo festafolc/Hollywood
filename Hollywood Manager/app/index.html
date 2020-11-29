@@ -23,25 +23,25 @@
             <a href="#" class="nav-link">Hollywood</a>
           </li>
           <li class="nav-item dropdown">
-            <a href="#" class="nav-link">People</a>
+            <a href="#people" class="nav-link">People</a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">Movies</a>
+            <a href="#movies" class="nav-link">Movies</a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">Studios</a>
+            <a href="#studios" class="nav-link">Studios</a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">Cinemas</a>
+            <a href="#cinemas" class="nav-link">Cinemas</a>
           </li>
           <li id = "openEditProfile" class="nav-item">
-            <a href="#" class="nav-link" data-toggle="modal" data-target="#makeEdit">Edit profile</a>
+            <a class="nav-link" data-toggle="modal" data-target="#makeEdit">Edit profile</a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link" data-toggle="modal" data-target="#makeLogin">Log in</a>
+            <a class="nav-link" data-toggle="modal" data-target="#makeLogin">Log in</a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link" data-toggle="modal" data-target="#makeSignUp">Sign Up</a>
+            <a class="nav-link" data-toggle="modal" data-target="#makeSignUp">Sign Up</a>
           </li>
         </ul>
         <form class="form-inline">
@@ -90,7 +90,7 @@
               <input type="text" id="uEn" class="form-control" placeholder="new username">
               <input type="email" id="uEe" class="form-control" placeholder="new email">
               <input type="password" id="uEp" class="form-control" placeholder="new password">
-              <button type="submit" onclick="regLog.editUser()" class="btn btn-success">Login</button>
+              <button type="submit" onclick="regLog.editUser()" class="btn btn-success">Accept</button>
               <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
             </form>
           </div>
@@ -101,7 +101,7 @@
       <img id="img-header" class="img-fluid" src="/images/hollywood-header.jpg" alt="Hollywood Picture">
     </div>
   </header>
-  <section id="people" class="loginDisplay">
+  <section id="people">
     <h1 class="section-title">Directors and actors</h1>
     <div class="container my-3 py-5 text-center">
       <div class="col-container row mt-4">
@@ -174,7 +174,7 @@
       <hr class="hr-section">
     </div>
   </section>
-  <section id="movies" class="loginDisplay">
+  <section id="movies">
     <h1 class="section-title">Movies</h1>
     <div class="container">
       <div id="movingVideos" class="carousel slide" data-ride="carousel">
@@ -230,7 +230,7 @@
       <hr class="hr-section">
     </div>
   </section>
-  <section id="studios" class="loginDisplay">
+  <section id="studios">
     <h1 class="section-title">Studios</h1>
     <div class="wrapper">
       <div class="container">
@@ -310,7 +310,7 @@
       </div>
     </div>
   </section>
-  <section id="cinemas" class="loginDisplay">
+  <section id="cinemas">
     <h1 class="section-title">Cinemas</h1>
     <div class="container my-3 py-5 text-center">
       <div class="col-container row mt-4">
@@ -403,7 +403,7 @@
       <hr class="hr-section">
     </div>
   </section>
-  <section id="contact" class="loginDisplay">
+  <section id="contact">
     <div class="container">
       <div class="row">
         <div class="col-12 text-center my-5">
@@ -433,8 +433,8 @@
               </div>
             </div>
             <div class="form-group mt-2">
-              <label for="exampleFormControlTextarea1">Write here your message</label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+              <label for="sendMessage">Write here your message</label>
+              <textarea class="form-control" id="sendMessage" rows="3"></textarea>
               <small class="form-text text-muted">We never share your data with anyone</small>
             </div>
             <div class="form-check">
@@ -483,7 +483,7 @@
       </div>
     </div>
   </div>
-  <div class="container-fluid text-center bg-secondary py-2">
+  <div class="text-center bg-secondary py-2">
     <strong>Hollywood Manager</strong> Copyright &copy; 2020
   </div>
 </footer>

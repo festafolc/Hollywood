@@ -77,7 +77,7 @@ let regLog = new function() {
         document.getElementById('emailReg').value = null;
         document.getElementById('passwordReg').value = null;
     
-        alert("User has been register");
+        alert("User has been registered ");
     }
 
     this.login = function(){
@@ -120,12 +120,12 @@ let regLog = new function() {
     }
 }
 
-// function load (){
-//     document.getElementById('people').style.display = 'none';
-//     document.getElementById('movies').style.display = 'none';
-//     document.getElementById('studios').style.display = 'none';
-//     document.getElementById('cinemas').style.display = 'none';
-//     document.getElementById('openEditProfile').style.display = 'none';
-// }
+function load (){
+    document.getElementById('people').style.display = 'none';
+    document.getElementById('movies').style.display = 'none';
+    document.getElementById('studios').style.display = 'none';
+    document.getElementById('cinemas').style.display = 'none';
+    document.getElementById('openEditProfile').style.display = 'none';
+}
 
-// window.onload = load;
+window.onload = load;
