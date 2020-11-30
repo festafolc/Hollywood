@@ -1,7 +1,7 @@
 let app = new function() {
     this.element = document.getElementById('usersTable');
     this.users = [];
-  
+
     //Create a new user
     this.create = function () {
         let userName = document.getElementById('setUser').value;
@@ -95,7 +95,6 @@ let app = new function() {
         element.innerHTML = 'No ' + name;
       }
     };
-  
   }
   
 app.read();
